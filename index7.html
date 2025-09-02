@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dhiraj's Portfolio</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <div class="circle-image">
+    <img src="/home/dhiraj/Downloads/WhatsApp Image 2025-09-02 at 5.12.52 PM.jpg" alt="Dhiraj" />
+  </div>
+  <h1 class="portfolio-title">Dhiraj's Portfolio</h1>
+</header>
+
+<main>
+  <section id="stocks">
+    <h2>Stock Market Profits</h2>
+    <div class="candlestick-bg">
+      <canvas id="candlestick-chart"></canvas>
+    </div>
+    <div class="profits">
+      <div class="profit-item gold">Gold: $75,000</div>
+      <div class="profit-item bitcoin">Bitcoin: $65,000</div>
+      <div class="profit-item bmw">BMW: $60,000</div>
+    </div>
+    <div class="total-portfolio">Portfolio Value: $200,000+</div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="coding-bg">
+      <pre id="code-background"></pre>
+    </div>
+    <div class="skills-list">
+      <p><strong>CODING</strong> - Ethical Hacking and Web Development</p>
+    </div>
+  </section>
+
+  <section id="personal">
+    <h2>Personal Information</h2>
+    <ul>
+      <li><strong>Full Name:</strong> DHIRAJ DHANANJAY LAKAPATE</li>
+      <li><strong>Age:</strong> 15</li>
+      <li><strong>Origin:</strong> Maharashtra, Pune, India</li>
+      <li><strong>Achievements:</strong> 30,000+ points on XDA forums</li>
+      <li><strong>Portfolio Value:</strong> Over $200,000</li>
+      <li><strong>AI Projects:</strong> Completed 3+ worldwide AI projects</li>
+      <li><strong>Founder:</strong> Only Up Agency</li>
+      <li><strong>Websites Developed:</strong> 4+ fully functional websites</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Contact Dhiraj: <a href="mailto:contact@onlyup.agency" target="_blank" rel="noopener">contact@onlyup.agency</a></p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+<style>
+    /* Reset and base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body and overall theme */
+body {
+  background: linear-gradient(135deg, #1e1e2f, #121217);
+  color: #eee;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Header */
+header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 2em;
+  background: rgba(20, 20, 35, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #333;
+}
+
+.portfolio-title {
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #ffd700, #ffa500, #d4af37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 8px rgba(255,215,0, 0.6);
+}
+
+/* Circle Image Top-Right */
+.circle-image {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid #d4af37;
+  box-shadow: 0 0 40px #ffcc00aa;
+  z-index: 1000;
+}
+
+.circle-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Main content */
+main {
+  max-width: 1000px;
+  margin: 3rem auto 2rem;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+/* Stocks section */
+#stocks {
+  position: relative;
+  background: rgba(30, 30, 45, 0.9);
+  border-radius: 25px;
+  padding: 3rem 2rem 4rem;
+  box-shadow: 0 12px 30px #0008;
+  overflow: hidden;
+}
+
+.candlestick-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 300px;
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+}
+
+#candlestick-chart {
+  width: 100%;
+  height: 300px;
+  display: block;
+}
+
+.profits {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 170px;
+}
+
+.profit-item {
+  font-size: 1.5rem;
+  padding: 1.5rem 3rem;
+  background: linear-gradient(135deg, #121217, #22222b);
+  border-radius: 30px;
+  box-shadow: 0 0 10px #444;
+  font-weight: 700;
+  color: #eee;
+  user-select: none;
+  transition: transform 0.3s ease;
+}
+
+.profit-item:hover {
+  transform: scale(1.1);
+}
+
+.gold {
+  color: #d4af37;
+  text-shadow: 0 0 10px #d4af37cc;
+}
+
+.bitcoin {
+  color: #f9a825;
+  text-shadow: 0 0 10px #f9a825cc;
+}
+
+.bmw {
+  color: #4dd0e1;
+  text-shadow: 0 0 10px #4dd0e1cc;
+}
+
+.total-portfolio {
+  margin-top: 2rem;
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+  color: #ffd700cc;
+  text-shadow: 0 0 15px #ffd700a8;
+  user-select: none;
+}
+
+/* Skills section */
+#skills {
+  position: relative;
+  background: rgba(20, 20, 30, 0.85);
+  border-radius: 25px;
+  padding: 3rem 2rem;
+  box-shadow: 0 12px 30px #0008;
+  overflow: hidden;
+}
+
+.coding-bg {
+  background: #0f0f17;
+  border-radius: 15px;
+  height: 220px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+#code-background {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1rem;
+  line-height: 1.3;
+  color: #00ffccaa;
+  padding: 2rem;
+  white-space: pre-wrap;
+  filter: blur(0);
+  transition: filter 0.7s ease-in-out;
+  user-select: text;
+}
+
+#skills.scrolled #code-background {
+  filter: blur(6px);
+}
+
+.skills-list p {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #ffd700;
+}
+
+/* Personal info */
+#personal {
+  background: rgba(18,18,30,0.9);
+  padding: 3rem 2rem;
+  border-radius: 25px;
+  box-shadow: 0 14px 32px #000a;
+  color: #eee;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+#personal ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#personal li {
+  font-size: 1.15rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #444;
+}
+
+#personal li:last-child {
+  border: none;
+}
+
+/* Footer */
+footer {
+  padding: 1.5rem 0;
+  text-align: center;
+  background: #0f0f17;
+  color: #ffd700;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-top: auto;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .portfolio-title {
+    font-size: 2.4rem;
+  }
+  .circle-image {
+    width: 120px;
+    height: 120px;
+    top: 10px;
+    right: 10px;
+  }
+  main {
+    margin: 2rem 1rem;
+    gap: 3rem;
+  }
+  #stocks {
+    padding: 2rem 1rem 3rem;
+  }
+  #skills {
+    padding: 2rem 1rem;
+  }
+  #personal {
+    padding: 2rem 1rem;
+  }
+}
+
+</style>
+<script>// Function to generate random candlestick data (mock)
+function generateCandleData(points = 30) {
+  return [...Array(points)].map(() => {
+    let open = Math.random() * 60 + 20;
+    let close = open + (Math.random() - 0.5) * 30;
+    let high = Math.max(open, close) + Math.random() * 15;
+    let low = Math.min(open, close) - Math.random() * 15;
+    return { open, close, high, low };
+  });
+}
+
+function drawCandlestickChart(id, data) {
+  const canvas = document.getElementById(id);
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth * 0.9;
+  canvas.height = 300;
+  const width = canvas.width;
+  const height = canvas.height;
+  ctx.clearRect(0, 0, width, height);
+  
+  // Setup dimensions
+  const margin = 40;
+  const candleWidth = (width - margin * 2) / data.length * 0.6;
+
+  // Find price range
+  const prices = data.flatMap(d => [d.high, d.low]);
+  const maxPrice = Math.max(...prices);
+  const minPrice = Math.min(...prices);
+  const priceRange = maxPrice - minPrice;
+
+  // Convert price to y coord
+  const priceToY = price => height - margin - ((price - minPrice) / priceRange) * (height - margin * 2);
+
+  // Draw axes
+  ctx.strokeStyle = '#ddd';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+
+  // y-axis line
+  ctx.moveTo(margin, margin);
+  ctx.lineTo(margin, height - margin);
+
+  // x-axis line
+  ctx.moveTo(margin, height - margin);
+  ctx.lineTo(width - margin, height - margin);
+  ctx.stroke();
+
+  // Draw candles
+  data.forEach((candle, i) => {
+    const x = margin + i * ((width - margin * 2) / data.length) + ( ((width - margin * 2) / data.length) * 0.2 );
+    const openY = priceToY(candle.open);
+    const closeY = priceToY(candle.close);
+    const highY = priceToY(candle.high);
+    const lowY = priceToY(candle.low);
+
+    // Wick
+    ctx.strokeStyle = '#ffa500';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(x + candleWidth / 2, highY);
+    ctx.lineTo(x + candleWidth / 2, lowY);
+    ctx.stroke();
+
+    // Candle body
+    ctx.fillStyle = candle.open > candle.close ? '#d4af37' : '#34d4e6';
+    const bodyY = Math.min(openY, closeY);
+    const bodyHeight = Math.abs(openY - closeY);
+    ctx.fillRect(x, bodyY, candleWidth, bodyHeight || 2);
+  });
+}
+
+// Animate drawing the chart repeatedly every 5 seconds simulating live data
+function animateCandlestick() {
+  const data = generateCandleData(35);
+  drawCandlestickChart('candlestick-chart', data);
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  animateCandlestick();
+  setInterval(animateCandlestick, 5000);
+
+  // Code background scrolled blur effect
+  const skillsSection = document.getElementById('skills');
+  const codeBg = document.getElementById('code-background');
+
+  // Fill code background with code snippet repeated many times
+  const codeSample = [
+    "function attack() {",
+    "  console.log('Penetration testing...');",
+    "  // Ethical hacking in progress",
+    "  let vulnerable = scanNetwork();",
+    "  if(vulnerable){",
+    "    exploit(vulnerable);",
+    "  }",
+    "}",
+    "",
+    "const projects = ['Website A', 'AI Tool', 'Website B'];",
+    "for(let p of projects){",
+    "  deploy(p);",
+    "}",
+    "",
+    "// Portfolio value over 2 lakh dollars",
+    "console.log('Dhiraj is unstoppable!');"
+  ];
+
+  codeBg.textContent = codeSample.join('\n').repeat(20);
+
+  window.addEventListener('scroll', () => {
+    const rect = skillsSection.getBoundingClientRect();
+    if(rect.top < window.innerHeight && rect.bottom > 0) {
+      skillsSection.classList.add('scrolled');
+    } else {
+      skillsSection.classList.remove('scrolled');
+    }
+  });
+});
+</script>
